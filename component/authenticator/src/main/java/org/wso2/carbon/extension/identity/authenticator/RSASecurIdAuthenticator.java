@@ -118,8 +118,7 @@ public class RSASecurIdAuthenticator extends AbstractApplicationAuthenticator
                     .getQueryStringWithFrameworkContextId(authenticationContext.getQueryParams(),
                             authenticationContext.getCallerSessionKey(),
                             authenticationContext.getContextIdentifier());
-            response.sendRedirect(response.encodeRedirectURL(rsaLoginPage
-                    + "?" + queryParams + retryParam));
+            response.sendRedirect(rsaLoginPage + "?" + queryParams + retryParam);
         } catch (IOException e) {
             throw new AuthenticationFailedException("RSA SecurId Authenticator could not handle the inputs " +
                     "and outputs", e);
